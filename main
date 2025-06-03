@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Criando um hóspede
+        Pessoa hóspede = new Pessoa("Matheus", 30);
+        
+        // Criando uma suíte
+        Suite suite = new Suite("Luxo", 200.0);
+        
+        // Criando uma reserva
+        Reserva reserva = new Reserva(hóspede, suite, 15); // 15 dias de estadia
+
+        // Calculando o valor total da reserva
+        double valorTotal = reserva.CalcularValorTotal();
+        
+        // Exibindo os resultados
+        Console.WriteLine($"Hóspede: {hóspede.Nome}");
+        Console.WriteLine($"Tipo de Suíte: {suite.Tipo}");
+        Console.WriteLine($"Valor Total da Reserva: R${valorTotal:F2}");
+    }
+}
