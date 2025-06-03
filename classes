@@ -1,0 +1,50 @@
+// Classe Pessoa
+public class Pessoa
+{
+    public string Nome { get; set; }
+    public int Idade { get; set; }
+
+    public Pessoa(string nome, int idade)
+    {
+        Nome = nome;
+        Idade = idade;
+    }
+}
+
+// Classe Suíte
+public class Suite
+{
+    public string Tipo { get; set; }
+    public double ValorDiaria { get; set; }
+
+    public Suite(string tipo, double valorDiaria)
+    {
+        Tipo = tipo;
+        ValorDiaria = valorDiaria;
+    }
+}
+
+// Classe Reserva
+public class Reserva
+{
+    public Pessoa Hóspede { get; set; }
+    public Suite Suíte { get; set; }
+    public int Dias { get; set; }
+
+    public Reserva(Pessoa hóspede, Suite suíte, int dias)
+    {
+        Hóspede = hóspede;
+        Suíte = suíte;
+        Dias = dias;
+    }
+
+    public double CalcularValorTotal()
+    {
+        double valorTotal = Suíte.ValorDiaria * Dias;
+        if (Dias > 10)
+        {
+            valorTotal *= 0.9; // Aplicando 10% de desconto
+        }
+        return valorTotal;
+    }
+}
